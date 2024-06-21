@@ -97,8 +97,8 @@ server directory and you should be good to go.
 
 Please cite stminsights if you use it for your publications:
 
-      Carsten Schwemmer (2021). stminsights: A Shiny Application for Inspecting
-      Structural Topic Models. R package version 0.4.1.
+      Carsten Schwemmer (2024). stminsights: A Shiny Application for Inspecting
+      Structural Topic Models. R package version 0.4.3.
       https://github.com/cschwem2er/stminsights
 
 A BibTeX entry for LaTeX users is:
@@ -106,7 +106,7 @@ A BibTeX entry for LaTeX users is:
       @Manual{,
         title = {stminsights: A Shiny Application for Inspecting Structural Topic Models},
         author = {Carsten Schwemmer},
-        year = {2021},
-        note = {R package version 0.4.1},
+        year = {2024},
+        note = {R package version 0.4.3},
         url = {https://github.com/cschwem2er/stminsights},
       }

@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,23 +40,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">stminsights</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -71,7 +67,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/cschwem2er/stminsights/">
+  <a href="https://github.com/cschwem2er/stminsights/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -88,30 +84,30 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="stminsights" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#stminsights" class="anchor"></a>stminsights</h1></div>
-
+<div class="section level1">
+<div class="page-header"><h1 id="stminsights">stminsights<a class="anchor" aria-label="anchor" href="#stminsights"></a>
+</h1></div>
+<p><a href="https://ci.appveyor.com/project/cschwem2er/stminsights" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/cschwem2er/stminsights?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="https://cran.r-project.org/package=stminsights" class="external-link"><img src="https://www.r-pkg.org/badges/version/stminsights" alt="CRAN status"></a> <a href="https://cran.r-project.org/package=stminsights" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/stminsights" alt="CRAN downloads"></a></p>
 <p><img src="reference/figures/logo.png" width="800"></p>
-<div id="a-shiny-application-for-structural-topic-models" class="section level2">
-<h2 class="hasAnchor">
-<a href="#a-shiny-application-for-structural-topic-models" class="anchor"></a>A Shiny Application for Structural Topic Models</h2>
-<p>This app enables interactive validation, interpretation and visualization of <a href="https://www.structuraltopicmodel.com/">Structural Topic Models</a> (STM). Stminsights is focused on making your life easier after fitting your STM models. In case you are not familiar with the STM <a href="https://CRAN.R-project.org/package=stm">package</a>, the corresponding vignette is an excellent starting point.</p>
+<div class="section level2">
+<h2 id="a-shiny-application-for-structural-topic-models">A Shiny Application for Structural Topic Models<a class="anchor" aria-label="anchor" href="#a-shiny-application-for-structural-topic-models"></a>
+</h2>
+<p>This app enables interactive validation, interpretation and visualization of <a href="https://www.structuraltopicmodel.com/" class="external-link">Structural Topic Models</a> (STM). Stminsights is focused on making your life easier after fitting your STM models. In case you are not familiar with the STM <a href="https://CRAN.R-project.org/package=stm" class="external-link">package</a>, the corresponding vignette is an excellent starting point.</p>
 </div>
-<div id="how-to-install" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-install" class="anchor"></a>How to Install</h2>
-<p>You can download and install the latest development version of stminsights by running <code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github('cschwem2er/stminsights')</a></code>.</p>
-<p>For Windows users installing from github requires proper setup of <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a>.</p>
-<p>stminsights can also be installed from CRAN by running <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages('stminsights')</a></code>.</p>
+<div class="section level2">
+<h2 id="how-to-install">How to Install<a class="anchor" aria-label="anchor" href="#how-to-install"></a>
+</h2>
+<p>You can download and install the latest development version of stminsights by running <code>devtools::install_github('cschwem2er/stminsights')</code>.</p>
+<p>For Windows users installing from github requires proper setup of <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">Rtools</a>.</p>
+<p>stminsights can also be installed from CRAN by running <code>install.packages('stminsights')</code>.</p>
 </div>
-<div id="how-to-use" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-use" class="anchor"></a>How to Use</h2>
+<div class="section level2">
+<h2 id="how-to-use">How to Use<a class="anchor" aria-label="anchor" href="#how-to-use"></a>
+</h2>
 <p>After loading stminsights you can launch the shiny app in your browser:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/cschwem2er/stminsights">stminsights</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/run_stminsights.html">run_stminsights</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/cschwem2er/stminsights" class="external-link">stminsights</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/run_stminsights.html">run_stminsights</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>You can then upload a <code>.RData</code> file which should include:</p>
 <ul>
 <li>one or several <code>stm</code> objects.</li>
@@ -120,104 +116,106 @@
 </ul>
 <p>As an example, the following code fits two models and estimates effects for the Political Blog Corpus. Afterwards, all objects required for stminsights are stored in <code>stm_poliblog5k.RData</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.structuraltopicmodel.com/">stm</a></span><span class="op">)</span>
-
-<span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">poliblog5k.docs</span>,
-            vocab <span class="op">=</span> <span class="va">poliblog5k.voc</span>,
-            meta <span class="op">=</span> <span class="va">poliblog5k.meta</span><span class="op">)</span>
-
-<span class="va">poli</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/stm.html">stm</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">documents</span>, 
-            vocab <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">vocab</span>,
-            data <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span>, 
-            prevalence <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>,
-            K <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>
-<span class="va">prep_poli</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/estimateEffect.html">estimateEffect</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>, <span class="va">poli</span>,
-                            meta <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span><span class="op">)</span>
-
-<span class="va">poli_content</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/stm/man/stm.html">stm</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">documents</span>, 
-                     vocab <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">vocab</span>,
-                     data <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span>, 
-                     prevalence <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>,
-                     content <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span>,
-                     K <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>  
-<span class="va">prep_poli_content</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/estimateEffect.html">estimateEffect</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">15</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>, <span class="va">poli_content</span>,
-                                    meta <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/save.html">save.image</a></span><span class="op">(</span><span class="st">'stm_poliblog5k.RData'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://www.structuraltopicmodel.com/" class="external-link">stm</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">poliblog5k.docs</span>,</span>
+<span>            vocab <span class="op">=</span> <span class="va">poliblog5k.voc</span>,</span>
+<span>            meta <span class="op">=</span> <span class="va">poliblog5k.meta</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">poli</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/stm.html" class="external-link">stm</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">documents</span>, </span>
+<span>            vocab <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">vocab</span>,</span>
+<span>            data <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span>, </span>
+<span>            prevalence <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html" class="external-link">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>,</span>
+<span>            K <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="va">prep_poli</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/estimateEffect.html" class="external-link">estimateEffect</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html" class="external-link">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>, <span class="va">poli</span>,</span>
+<span>                            meta <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">poli_content</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/stm/man/stm.html" class="external-link">stm</a></span><span class="op">(</span>documents <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">documents</span>, </span>
+<span>                     vocab <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">vocab</span>,</span>
+<span>                     data <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span>, </span>
+<span>                     prevalence <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html" class="external-link">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>,</span>
+<span>                     content <span class="op">=</span> <span class="op">~</span> <span class="va">rating</span>,</span>
+<span>                     K <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>  </span>
+<span><span class="va">prep_poli_content</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/estimateEffect.html" class="external-link">estimateEffect</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">15</span> <span class="op">~</span> <span class="va">rating</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/stm/man/s.html" class="external-link">s</a></span><span class="op">(</span><span class="va">day</span><span class="op">)</span>, <span class="va">poli_content</span>,</span>
+<span>                                    meta <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">meta</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save.image</a></span><span class="op">(</span><span class="st">'stm_poliblog5k.RData'</span><span class="op">)</span></span></code></pre></div>
 <p>After launching stminsights and uploading the file, all objects are automatically imported and you can select which models and effect estimates to analyze.</p>
 <p>In addition to the shiny app, several helper functions are available, e.g. <code><a href="reference/get_effects.html">get_effects()</a></code> for storing effect estimates in a tidy dataframe.</p>
 </div>
-<div id="how-to-deploy-on-shiny-server" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-deploy-on-shiny-server" class="anchor"></a>How to Deploy on Shiny Server</h2>
+<div class="section level2">
+<h2 id="how-to-deploy-on-shiny-server">How to Deploy on Shiny Server<a class="anchor" aria-label="anchor" href="#how-to-deploy-on-shiny-server"></a>
+</h2>
 <p>To deploy stminsights to your own shiny server, place the file <code>app.R</code>, which is located at <code>inst/app</code> of this package, to a folder in your server directory and you should be good to go.</p>
 </div>
-<div id="citation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a>Citation</h2>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
 <p>Please cite stminsights if you use it for your publications:</p>
-<pre><code>  Carsten Schwemmer (2021). stminsights: A Shiny Application for Inspecting
-  Structural Topic Models. R package version 0.4.1.
-  https://github.com/cschwem2er/stminsights</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>  Carsten <span class="fu">Schwemmer</span> (<span class="dv">2024</span>). stminsights<span class="sc">:</span> A Shiny Application <span class="cf">for</span> Inspecting</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  Structural Topic Models. R package version <span class="dv">0</span>.<span class="dv">4</span>.<span class="fl">3.</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>cschwem2er<span class="sc">/</span>stminsights</span></code></pre></div>
 <p>A BibTeX entry for LaTeX users is:</p>
-<pre><code>  @Manual{,
-    title = {stminsights: A Shiny Application for Inspecting Structural Topic Models},
-    author = {Carsten Schwemmer},
-    year = {2021},
-    note = {R package version 0.4.1},
-    url = {https://github.com/cschwem2er/stminsights},
-  }</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>    title <span class="ot">=</span> {stminsights<span class="sc">:</span> A Shiny Application <span class="cf">for</span> Inspecting Structural Topic Models},</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    author <span class="ot">=</span> {Carsten Schwemmer},</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2024</span>},</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="fl">4.3</span>},</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>cschwem2er<span class="sc">/</span>stminsights},</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=stminsights">https://​cloud.r-project.org/​package=stminsights</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/cschwem2er/stminsights/">https://​github.com/​cschwem2er/​stminsights/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/cschwem2er/stminsights/issues">https://​github.com/​cschwem2er/​stminsights/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Carsten Schwemmer <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-9084-946X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=stminsights" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/cschwem2er/stminsights/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/cschwem2er/stminsights/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/cschwem2er/stminsights"><img src="https://travis-ci.org/cschwem2er/stminsights.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/cschwem2er/stminsights"><img src="https://ci.appveyor.com/api/projects/status/github/cschwem2er/stminsights?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="https://cran.r-project.org/package=stminsights"><img src="https://www.r-pkg.org/badges/version/stminsights" alt="CRAN status"></a></li>
-<li><a href="https://cran.r-project.org/package=stminsights"><img src="https://cranlogs.r-pkg.org/badges/grand-total/stminsights" alt="CRAN downloads"></a></li>
+<li>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing stminsights</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Carsten Schwemmer <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-9084-946X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Carsten Schwemmer.</p>
+  <p></p>
+<p>Developed by Carsten Schwemmer.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
@@ -225,6 +223,8 @@
 
   
 
+
+  
 
   </body>
 </html>
