@@ -17,6 +17,7 @@
 #'
 #' @examples
 #'
+#'
 #' library(stm)
 #' library(ggraph)
 #' library(quanteda)
@@ -41,6 +42,7 @@
 #'                    max.em.its = 1, # reduce computation time for example
 #'                    verbose = FALSE)
 #'
+#' \dontrun{
 #' # extract network
 #' stm_corrs <- get_network(model = gadarian_10,
 #'                          method = 'simple',
@@ -48,9 +50,9 @@
 #'                          cutoff = 0.001,
 #'                          cutiso = TRUE)
 #'
-#' \dontrun{
+#'
 #' # plot network
-#' ggraph(stm_corrs, layout = 'fr') +
+#' ggraph(stm_corrs, layout = 'auto') +
 #'   geom_edge_link(
 #'     aes(edge_width = weight),
 #'     label_colour = '#fc8d62',
@@ -103,15 +105,15 @@ get_network <- function(model,
 
   igraph::V(g)$props <- colMeans(model$theta)
 
-  graph_tidy <- as_tbl_graph(g) %>%
-    mutate(degree = centrality_degree(loops = FALSE)) %>%
-    activate(edges) %>%
-    filter(!edge_is_loop()) %>%
+  graph_tidy <- as_tbl_graph(g) |>
+    mutate(degree = centrality_degree(loops = FALSE)) |>
+    activate(edges) |>
+    filter(!edge_is_loop()) |>
     mutate(weight = round(weight, 2),
            edge_label = as.character(weight))
 
   if (cutiso == TRUE) {
-    graph_tidy <- graph_tidy %>% activate(nodes) %>%
+    graph_tidy <- graph_tidy |> activate(nodes) |>
       filter(degree > 0)
   }
   return(graph_tidy)

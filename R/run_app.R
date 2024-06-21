@@ -60,7 +60,7 @@
 #' @import stm
 #' @import tidygraph
 #' @import ggraph
-#' @import shiny
+#' @importFrom shiny runApp
 #' @import shinyBS
 #' @import shinydashboard
 #' @import ggplot2
@@ -68,6 +68,7 @@
 #' @import stringr
 #' @import dplyr
 #' @import tibble
+#' @import DT
 #'
 #' @export
 #'

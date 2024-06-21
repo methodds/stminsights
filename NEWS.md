@@ -1,3 +1,10 @@
+# stminsights 0.4.3
+
+## minor fixes
+
+* adjusted visualization for correlation networks
+* removed document correlation tab for shiny app (deprecated functions)
+
 # stminsights 0.4.2
 
 ## package dependency updates

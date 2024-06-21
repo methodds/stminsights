@@ -23,6 +23,7 @@ as tidygraph objects and add labels and topic proportions.
 }
 \examples{
 
+
 library(stm)
 library(ggraph)
 library(quanteda)
@@ -47,6 +48,7 @@ gadarian_10 <- stm(documents = out$documents,
                    max.em.its = 1, # reduce computation time for example
                    verbose = FALSE)
 
+\dontrun{
 # extract network
 stm_corrs <- get_network(model = gadarian_10,
                          method = 'simple',
@@ -54,9 +56,9 @@ stm_corrs <- get_network(model = gadarian_10,
                          cutoff = 0.001,
                          cutiso = TRUE)
 
-\dontrun{
+
 # plot network
-ggraph(stm_corrs, layout = 'fr') +
+ggraph(stm_corrs, layout = 'auto') +
   geom_edge_link(
     aes(edge_width = weight),
     label_colour = '#fc8d62',
