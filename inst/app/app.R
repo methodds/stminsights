@@ -10,6 +10,7 @@ library(ggrepel)
 library(tibble)
 library(dplyr)
 library(readr)
+library(DT)
 
 
 
@@ -587,48 +588,52 @@ ui <- dashboardPage(
       ),
 
 
-      tabPanel(
-        'Proportions (documents)',
-        h1('Proportion plot'),
-        p('This plot shows the topic proportions for single documents.'),
-        plotOutput('topicpropsperdoc',
-                   height = '600px',
-                   #             height = paste(as.character((ncol(props()) * 25), 'px')),
-                   width = "70%"),
-        #downloadButton("download_prop_docs", "Download plot"),
-        h1('Scatter plot'),
+### README ###
+### Document proportions currently not implemented due deprecated functions
 
-        p(
-          'This plot shows the proportion for an articles over the selected topics'
-        ),
-        plotOutput(
-          'doc_topic_scatter',
-          height = '600px',
-          width = "600px",
-          click = "plot_click",
-          brush = brushOpts(id = "plot_brush")
-        ),
-        #downloadButton("download_scatter", "Download plot"),
-        h2('Document info (click)'),
-        p(strong("Click"),
-          " on any dot in the plot to select a document"),
-        p(
-          "The table will show the proportion for each document on the selected topics as well as the selected meta data to display"
-        ),
-        dataTableOutput("click_info"),
-        h2('Document info (brush)'),
-        p(
-          strong("Highlight"),
-          " any area in the graph to show multiple documents"
-        ),
-        p(
-          "The table will show the proportion for each document on the selected topics as well as the selected meta data to display (up to 50 documents)"
-        ),
-        dataTableOutput("brush_info"),
-
-        value = 12
-      ),
-
+#
+#       tabPanel(
+#         'Proportions (documents)',
+#         h1('Proportion plot'),
+#         p('This plot shows the topic proportions for single documents.'),
+#         plotOutput('topicpropsperdoc',
+#                    height = '600px',
+#                    #             height = paste(as.character((ncol(props()) * 25), 'px')),
+#                    width = "70%"),
+#         #downloadButton("download_prop_docs", "Download plot"),
+#         h1('Scatter plot'),
+#
+#         p(
+#           'This plot shows the proportion for an articles over the selected topics'
+#         ),
+#         plotOutput(
+#           'doc_topic_scatter',
+#           height = '600px',
+#           width = "600px",
+#           click = "plot_click",
+#           brush = brushOpts(id = "plot_brush")
+#         ),
+#         #downloadButton("download_scatter", "Download plot"),
+#         h2('Document info (click)'),
+#         p(strong("Click"),
+#           " on any dot in the plot to select a document"),
+#         p(
+#           "The table will show the proportion for each document on the selected topics as well as the selected meta data to display"
+#         ),
+#         dataTableOutput("click_info"),
+#         h2('Document info (brush)'),
+#         p(
+#           strong("Highlight"),
+#           " any area in the graph to show multiple documents"
+#         ),
+#         p(
+#           "The table will show the proportion for each document on the selected topics as well as the selected meta data to display (up to 50 documents)"
+#         ),
+#         dataTableOutput("brush_info"),
+#
+#         value = 12
+#       ),
+#
 
 
       tabPanel(
@@ -702,6 +707,13 @@ server <- function(input, output, session) {
 
   options(shiny.maxRequestSize = 5000 * 1024 ^ 2)
   options(shiny.reactlog = TRUE)
+
+  ### suppress warnings in console
+
+  # suppress warnings
+  storeWarn <- getOption("warn")
+  options(warn = -1)
+
 
   #### read and parse input file ####
 
@@ -1613,14 +1625,15 @@ server <- function(input, output, session) {
   #### dataframes for docs and terms ####
 
   # Dataframe for topic docs
-  output$tlabel <- renderDataTable(
+  output$tlabel <- renderDT(
     topicDocs(),
     escape = FALSE,
+    rownames = FALSE,
     options = list(
       pageLength = 1,
       searching = TRUE,
       autoWidth = TRUE,
-      scrollX = TRUE,
+      scrollX = FALSE,
       info = FALSE,
       lengthMenu = c(1, 5, 10, 50),
       lengthChange = T,
@@ -1629,13 +1642,14 @@ server <- function(input, output, session) {
   )
 
   # Dataframe for topic terms
-  output$tterms <- renderDataTable(
+  output$tterms <- renderDT(
     topicTerms(),
+    rownames = FALSE,
     options = list(
       pageLength = 1,
       searching = FALSE,
       autoWidth = TRUE,
-      scrollX = TRUE,
+      scrollX = FALSE, #
       lengthChange = FALSE,
       info = FALSE,
       paging = FALSE
@@ -1750,7 +1764,7 @@ server <- function(input, output, session) {
     plotScatterDoc(df_scatter, t1, t2)
   })
 
-  output$click_info <- renderDataTable({
+  output$click_info <- renderDT({
     t1 <- which(input$topic_graph_1 == tlabels())
     t2 <- which(input$topic_graph_2 == tlabels())
 
@@ -1774,6 +1788,7 @@ server <- function(input, output, session) {
     return(nearclickdata)
 
   },
+  rownames = FALSE,
   options = list(
     pageLength = 1,
     searching = FALSE,
@@ -1785,7 +1800,7 @@ server <- function(input, output, session) {
   ))
 
 
-  output$brush_info <- renderDataTable({
+  output$brush_info <- renderDT({
     t1 <- which(input$topic_graph_1 == tlabels())
     t2 <- which(input$topic_graph_2 == tlabels())
 
@@ -1808,6 +1823,7 @@ server <- function(input, output, session) {
     return(nearbrushdata)
 
   },
+  rownames = FALSE,
   options = list(
     pageLength = 1,
     searching = FALSE,
@@ -2058,7 +2074,7 @@ server <- function(input, output, session) {
 
 
       g <-
-        igraph::simplify(igraph::graph.adjacency(cormat, mode = 'undirected', weighted = TRUE))
+        igraph::simplify(igraph::graph_from_adjacency_matrix(cormat, mode = 'undirected', weighted = TRUE))
 
       if (length(igraph::E(g)) == 0) {
         print(
@@ -2140,7 +2156,7 @@ server <- function(input, output, session) {
 
 
 
-    plot <- toplot %>% ggraph(layout = 'fr') +
+    plot <- toplot %>% ggraph(layout = 'auto') +
       geom_edge_link(
         aes(edge_width = weight, label =  edge_label),
         label_colour = '#fc8d62',
@@ -2196,8 +2212,9 @@ server <- function(input, output, session) {
     return(modelframe)
   })
 
-  output$modelinfo <- renderDataTable(
+  output$modelinfo <- renderDT(
     modelcall(),
+    rownames = FALSE,
     options = list(
       pageLength = 1,
       searching = FALSE,
@@ -2224,8 +2241,9 @@ server <- function(input, output, session) {
   })
 
 
-  output$labelframe <- renderDataTable(
+  output$labelframe <- renderDT(
     labelframe(),
+    rownames = FALSE,
     options = list(
       pageLength = 1,
       searching = FALSE,
